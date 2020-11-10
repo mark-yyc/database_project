@@ -1,0 +1,48 @@
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-01','08:00:00','09:00:00','surgery');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','10:00:00','11:00:00','anesthesiology');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-22','13:00:00','14:00:00','endocrinology');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','08:00:00','09:00:00','surgery');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','15:00:00','16:00:00','orthopedic');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','09:00:00','10:00:00','endocrinology');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','16:00:00','17:00:00','orthopedic');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','10:00:00','11:00:00','orthopedic');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','09:00:00','10:00:00','anesthesiology');" 
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="call hosipital.get_doctor_schedule('2020-04-15','14:00:00','15:00:00','surgery');" 
+
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=1;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=100;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=200;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=300;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=400;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=500;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=600;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=700;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=800;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT doctor_schedule.person_id FROM appointment JOIN doctor_schedule USING(doctor_schedule_id) WHERE appointment_id=900;"
+
+
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=30;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=689;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=415;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=261;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=277;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=267;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=50;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=971;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=284;"
+mysqlslap --no-defaults --create-schema="hosipital" -u root  -c 100 -i 10 -proot --query="SELECT avg(grade)  FROM (clinic_entry NATURAL JOIN appointment) JOIN doctor_schedule USING(doctor_schedule_id) WHERE doctor_schedule.person_id=416;"
+
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(3245,'10001');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(3186,'17770');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(11458,'19368');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(51683,'6335');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(59702,'7884');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(60212,'9279');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(78479,'19370');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(95341,'19366');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(97059,'13442');"
+mysqlslap --no-defaults --create-schema="hospital" -u root  -c 100 -i 10 -proot --query="select hospital.add_appointment(106094,'6131');"
+
+
+
+    
